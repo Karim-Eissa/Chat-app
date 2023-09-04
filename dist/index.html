@@ -1,0 +1,120 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<link rel="stylesheet" href="css/styles.css">
+	<title>Chatting app</title>
+</head>
+<body>
+<nav class="">
+	<div class="nav-partonee">
+		<p>Chatly</p>
+	</div>
+	<ul id="navbar" class="">
+		<li class="logged-in">
+		<a href="#" class="modal-trigger" data-target="modal-account">Account</a>
+		</li>
+		<li class="logged-in">
+		<a href="#" class="" id="logout">Logout</a>
+		</li>
+		<li class="logged-out">
+		<a href="#" class="modal-trigger" data-target="modal-login">Login</a>
+		</li>
+		<li class="logged-out">
+		<a href="#" class=" modal-trigger" data-target="modal-signup">Sign up</a>
+		</li>
+	</ul>
+</nav>
+<div class="loggedin-as logged-in">Logged in as <span class="loggedInName"></span></div>
+<div class="relativee">
+	<!-- <div class="logged-out">
+		<img src="chat.webp" alt="chat">
+	</div> -->
+	<div class="container myCont my-4">
+		<div class="logged-in chat-rooms mb-3 text-center">
+			<button class="btn" id="general" style="background-color: #3a287e;">#general</button>
+			<button id="delete-all-chats" class="btn red darken-1">Delete All Chats</button>
+		</div>
+		<div class="logged-out">
+			<div class="main"> 
+				<h1 style="text-align: center; color: white; font-weight: bold;">Welcome to Chatly!</h1>
+				<h4 style="text-align: center; color: white;">A global chatroom for all!</h4>
+				<h4>Login now to chat</h4>
+				<div class="main-log">
+					<a href="#" class="modal-trigger" data-target="modal-login">Login</a>
+					<a href="#" class=" modal-trigger" data-target="modal-signup">Sign up</a>
+				</div>
+			</div>
+			
+		</div>
+		<div class="chat-window">
+			<ul class="logged-in chat-list list-group"></ul>
+		</div>
+		<form class="logged-in new-chat my-3">
+			<div class="input-groupp">
+				<input type="text" id="message" class="form-control" required>
+				<div class="input-group-append">
+					<input type="submit" class="btn" value="send" style="background-color: #3a287e;">
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<!-- SIGN UP MODAL -->
+<div id="modal-signup" class="modal">
+    <div class="modal-content">
+      <h4>Sign up</h4><br />
+      <form id="signup-form">
+		<div class="input-field">
+			<input type="text" id="name" name="name" required />
+			<label for="name">Name</label>
+		  </div>
+        <div class="input-field">
+          <input type="email" id="email" name="email" required />
+          <label for="email">Email address</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="password" name="password" required />
+          <label for="password">Choose password</label>
+        </div>
+        <button class="btn darken-2 z-depth-0" style="background-color: #3a287e;">Sign up</button>
+		<div class="signupError"></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- LOGIN MODAL -->
+  <div id="modal-login" class="modal">
+    <div class="modal-content">
+      <h4>Login</h4><br />
+      <form id="login-form">
+        <div class="input-field">
+          <input type="email" id="email" required />
+          <label for="login-email">Email address</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="password" required />
+          <label for="login-password">Your password</label>
+        </div>
+        <button class="btn darken-2 z-depth-0" style="background-color: #3a287e;">Login</button>
+		<div class="loginError"></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ACCOUNT MODAL -->
+  <div id="modal-account" class="modal">
+    <div class="modal-content center-align">
+      <h4>Account details</h4><br />
+      <div class="account-details"></div>
+    </div>
+  </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- <script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script> -->
+<script src="bundle.js"></script>
+</body>
+</html>
